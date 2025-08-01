@@ -1,0 +1,222 @@
+/* 🌫️ Global Background */
+body {
+  background-color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+/* 📄 Centered Inbox Page */
+.gradyzer-body-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* 🧱 Two-column Layout */
+.gradyzer-inbox-columns {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* 📥 Left Column */
+.gradyzer-inbox-left {
+  width: 35%;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.gradyzer-thread-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.inbox-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inbox-item.unread {
+  background-color: #000;
+  color: #fff;
+  border-left: 4px solid #0073aa;
+}
+
+.inbox-item.unread strong,
+.inbox-item.unread span,
+.inbox-item.unread em {
+  color: #fff;
+}
+
+.inbox-item.read {
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+.inbox-item.read strong,
+.inbox-item.read span,
+.inbox-item.read em {
+  color: #333;
+}
+
+.inbox-item:hover {
+  background-color: #eaeaea;
+}
+
+/* 📤 Right Column */
+.gradyzer-inbox-right {
+  width: 65%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.message-content {
+  margin-bottom: 20px;
+}
+
+/* 🛍️ Product Meta */
+.product-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.product-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.product-info {
+  font-size: 14px;
+  color: #333;
+}
+
+.product-info strong {
+  display: block;
+  font-weight: 600;
+}
+
+.product-info span {
+  color: #0073aa;
+}
+
+/* 💬 Message Block */
+.message-block {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.message-block .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.message-block strong {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.message-block span {
+  display: block;
+  margin-top: 4px;
+  color: #444;
+}
+
+.message-block em {
+  font-size: 0.85em;
+  color: #888;
+  display: block;
+  margin-top: 6px;
+}
+
+/* 💬 Reply Form */
+.reply-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.reply-form textarea:focus {
+  border-color: #0073aa;
+  outline: none;
+}
+
+.reply-form button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reply-form button:hover,
+.reply-form button:active {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* 🔔 Notification Bubble */
+.gradyzer-bubble-link {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.gradyzer-bubble-link:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .gradyzer-inbox-columns {
+    flex-direction: column;
+  }
+
+  .gradyzer-inbox-left,
+  .gradyzer-inbox-right {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .product-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-thumb {
+    width: 100%;
+    height: auto;
+  }
+}

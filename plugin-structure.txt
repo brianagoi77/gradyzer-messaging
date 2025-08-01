@@ -1,0 +1,41 @@
+Plugin structure
+
+gradyzer-messaging/
+├── gradyzer-messaging.php               # Main plugin file
+├── css/
+│   └── style.css                        # All frontend styles
+├── js/
+│   └── script.js                        # All frontend JS (AJAX, auto-refresh, UI)
+├── includes/
+│   ├── shortcodes.php                   # [gradyzer_inbox], [gradyzer_notification]
+│   ├── hooks.php                        # Custom hooks (optional, if used)
+│   ├── admin-page.php                   # Admin settings page (optional, if used)
+│   └── class-message-controller.php     # REST API controller for threads and replies
+
+
+Key Components Explained
+
+gradyzer-messaging.php → Main plugin file. Registers custom post type (gradyzer_message), endpoints, enqueues assets, handles activation logic, and loads all modules.
+
+css/style.css → Contains all frontend styles for the inbox layout, unread/read message blocks, thread display, reply form, and notification bubble. Responsive and polished.
+
+js/script.js → Handles dynamic thread loading, reply submission via AJAX, auto-refresh of threads and bubble every 10 seconds, and click behavior for unread messages.
+
+includes/shortcodes.php → Defines [gradyzer_inbox] for rendering the unified inbox layout, and [gradyzer_notification] for showing the unread message bubble.
+
+includes/class-message-controller.php → REST API controller that exposes endpoints for fetching message threads and posting replies. Used by the JS for dynamic updates.
+
+includes/hooks.php → (Optional) Contains custom WordPress hooks and filters for extensibility. Useful for integrating with other plugins or adding custom logic.
+
+includes/admin-page.php → (Optional) Admin settings page for configuring plugin behavior, refresh intervals, or UI options. Can be extended for future customization.
+
+
+WordPress Pages Created
+
+Your plugin sets up a seamless messaging experience with two powerful shortcodes:
+
+/inbox   [gradyzer_inbox] → Renders the full threaded inbox layout, combining message previews, real-time threads, and reply functionality in one elegant interface.
+
+Anywhere (menu, header, widget)   [gradyzer_notification] → Displays a dynamic message bubble showing the current unread count. Clicking it opens the latest unread thread instantly, keeping users engaged and informed.
+
+These shortcodes turn any WordPress site into a responsive, real-time messaging hub — no extra configuration required.
